@@ -9,7 +9,8 @@ const typeDefs = gql`
         age: Int!
     }
     type Query {
-        users: [User]!
+        users: [User!]!
+        user(id: ID!):  User!
     }
 
 `;
