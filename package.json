@@ -4,12 +4,18 @@
   "description": "a little project for learning graphql",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/yasinelabe/graphql_1.git"
   },
   "author": "Yasin Elabe",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.11.1",
+    "graphql": "^16.6.0",
+    "nodemon": "^2.0.20"
+  }
 }
