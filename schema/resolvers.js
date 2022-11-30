@@ -11,6 +11,15 @@ const resolvers = {
                 return user.id == id
             })[0]
         }
+    },
+
+    Mutation: {
+        newUser: (parent,args) => {
+            const newUser = args.input
+            newUser.id = UserList[UserList.length-1].id + 1
+            UserList.push(newUser)
+            return newUser
+        }
     }
 }
 
