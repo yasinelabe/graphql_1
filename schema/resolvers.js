@@ -14,11 +14,31 @@ const resolvers = {
     },
 
     Mutation: {
-        newUser: (parent,args) => {
+        newUser: (parent, args) => {
             const newUser = args.input
-            newUser.id = UserList[UserList.length-1].id + 1
+            newUser.id = UserList[UserList.length - 1].id + 1
             UserList.push(newUser)
             return newUser
+        },
+
+        updateUser: (parent, args) => {
+            const newUserData = args.input
+            let user = UserList.filter((user) => {
+                return user.id == newUserData.id
+            })[0]
+            user.age = newUserData.age
+            user.name = newUserData.name
+            user.username = newUserData.username
+            user.nationality = newUserData.nationality
+
+            return user
+
+        },
+
+        deleteUser: (parent,args) => {
+            return  UserList.filter((user) => {
+                return user.id != args.id
+            })
         }
     }
 }
